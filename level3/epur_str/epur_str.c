@@ -13,13 +13,15 @@ int main(int ac,char **av)
 		{
 			if (av[1][i] == ' ' || av[1][i] == '\t')
 				flag = 1;
+			if (!(av[1][i] == ' ' || av[1][i] == '\t'))
+			{
 			if (flag)
 			{
 				write (1, " ", 1);
-				flag = 0;
-				i++;
 			}
+			flag = 0;
 			write(1, &av[1][i], 1);
+			}
 			i++;
 		}
 	}
